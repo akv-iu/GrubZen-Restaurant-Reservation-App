@@ -1,12 +1,12 @@
 import React, {useState , useEffect} from 'react'
-
+import axios from "axios";
 function Loginscreen() {
 
     const[email , setemail] = useState('')
     const[password , setpassword] = useState('')
 
 
-    function Login(){
+    async function Login(){
         
         
             const user ={
@@ -14,6 +14,11 @@ function Loginscreen() {
                 email,
                 password
                 
+            }
+            try {
+                const result = await axios.post('/api/users/login' , user).data
+            } catch (error) {
+                console.log(error)
             }
             console.log(user)
         
