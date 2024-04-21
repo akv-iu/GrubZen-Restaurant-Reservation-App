@@ -1,13 +1,17 @@
 const mongoose = require("mongoose");
 
-var mongoURL = 'mongodb+srv://grubzen:grubzen@grubzen.6gbc4dt.mongodb.net/grubzen'
-mongoose.connect(mongoURL, { useUnifiedTopology: true, useNewurlParser: true })
-var connection = mongoose.connection
+var mongoDBURL = 'mongodb+srv://architapalkar15:NwQHZhYBcmN5cp9O@cluster0.dc2fmej.mongodb.net/mern-rooms'
 
-connection.on('error', () => {
-    console.log('Mongo DB Connection failed')
+mongoose.connect(mongoDBURL , {useUnifiedTopology:true , useNewUrlParser:true})
+
+var dbconnect = mongoose.connection
+
+dbconnect.on('error' , ()=>{
+    console.log(`Mongo DB Connection Failed`);
 })
-connection.on('connected', () => {
-    console.log('Mongo DB Connection Successful')
+
+dbconnect.on('connected' , ()=>{
+    console.log(`Mongo DB Connection Successfull`);
 })
+
 module.exports = mongoose

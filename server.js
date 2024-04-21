@@ -1,15 +1,25 @@
-const express = require("express");
+const express = require('express')
+const app = express()
+const db=require('./db')
+app.use(express.json())
+const path = require('path')
+const roomsRoutes = require('./routes/roomsRoute')
+const userRoute = require('./routes/userRoute')
+const bookingsRoute=require('./routes/bookingsRoute')
+app.use('/api/rooms',roomsRoutes)
+app.use('/api/users' , userRoute)
+app.use('/api/bookings' , bookingsRoute)
 
-const app = express();
+if(process.env.NODE_ENV ==='production')
+{
+    app.use('/' , express.static('client/build'))
 
-const dbConfig = require('./db')
+    app.get('*' , (req , res)=>{
 
-const restaurantsRoute = require('./routes/restaurantsRoute')
-const usersRoute = require('./routes/usersRoute')
+        res.sendFile(path.resolve(__dirname  , 'client/build/index.html'))
 
-app.use('/api/restaurants' , restaurantsRoute)
-app.use('/api/users' , usersRoute)
+    })
+}
 
-
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Node server started`));
+const port = process.env.PORT || 5000
+app.listen(port, () => console.log(`Node JS Server Started`))
