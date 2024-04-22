@@ -66,7 +66,7 @@ export const MyOrders = () => {
       setloading(true);
       const result = await axios.post('/api/bookings/cancelbooking' , {bookingid:bookingid , userid:user._id , roomid:roomid});
       setloading(false);
-      Swal.fire('Congrats' , 'Your Room has cancelled succeessfully' , 'success').then(result=>{
+      Swal.fire('Congrats' , 'Your Restaurant has cancelled succeessfully' , 'success').then(result=>{
         window.location.href='/profile'
     })
     } catch (error) {
