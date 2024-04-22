@@ -29,7 +29,7 @@ function Bookingscreen({match}) {
             console.log(data);
             setroom(data);
             setloading(false);
-            settotalAmount(data.rentperday * totalDays)
+            settotalAmount(data.rentperday * data.maxcount)
           } catch (error) {
             console.log(error);
             setloading(false);
@@ -90,16 +90,16 @@ function Bookingscreen({match}) {
                            <hr />
 
                            <p><b>Name</b> : {JSON.parse(localStorage.getItem('currentUser')).name}</p>
-                           <p><b>From Date</b> : {match.params.fromdate}</p>
-                           <p><b>To Date</b> : {match.params.todate}</p>
+                           <p><b>Date</b> : {match.params.fromdate}</p>
+                           {/* <p><b>To Date</b> : {match.params.todate}</p> */}
                            <p><b>Max Count </b>: {room.maxcount}</p>
                            </div>
                            
                            <div className='mt-5'>
                            <h1><b>Amount</b></h1>
                            <hr />
-                           <p>Total Days : <b>{totalDays}</b></p>
-                           <p>Rent Per Day : <b>{room.rentperday}</b></p>
+                           {/* <p>Total Days : <b>{totalDays}</b></p> */}
+                           <p>Price : <b>{room.rentperday}</b></p>
                            <h1><b>Total Amount : ${totalAmount} </b></h1>
 
                            <StripeCheckout
