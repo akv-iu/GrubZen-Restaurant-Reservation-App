@@ -26,9 +26,6 @@ function Room({ room, fromdate, todate }) {
         <p>
           <b>Type : {room.type}</b>
         </p>
-        <p>
-          <b>Review : {room.review}</b>
-        </p>
 
         <div style={{ float: "right" }}>
           

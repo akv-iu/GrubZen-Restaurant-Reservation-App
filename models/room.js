@@ -9,10 +9,6 @@ const roomSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    review:{
-        type:String,
-        required:true
-    },
     currentbookings:[],
     imageurls:[],
     maxcount:{type:Number , required:true},

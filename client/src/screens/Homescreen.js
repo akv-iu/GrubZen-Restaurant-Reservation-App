@@ -104,20 +104,13 @@ function Homescreen() {
             <input
               type="text"
               className="form-control i2 m-2"
-              placeholder='Search Rooms'
+              placeholder='Search Restaurants'
               value={searchkey}
               onKeyUp={filterBySearch}
               onChange={(e)=>{setsearchkey(e.target.value)}}
             />
           </div>
           <div className="col-md-4">
-            <select className="form-control m-2" value={type} onChange={(e)=>{filterByType(e.target.value)}} >
-
-            <option value="all">All</option>
-              <option value="delux">Delux</option>
-              <option value="non-delux">Non Delux</option>
-              
-            </select>
           </div>
         </div>
       </div>
