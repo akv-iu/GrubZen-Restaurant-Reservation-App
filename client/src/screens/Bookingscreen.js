@@ -58,7 +58,7 @@ function Bookingscreen({match}) {
             setloading(true);
             const result = await axios.post('/api/bookings/bookroom' , bookingDetails)
             setloading(false)
-            Swal.fire('Congrats' , 'Your Room has booked succeessfully' , 'success').then(result=>{
+            Swal.fire('Congrats' , 'Your Restaurant has booked succeessfully' , 'success').then(result=>{
                 window.location.href='/profile'
             })
         } catch (error) {
@@ -100,7 +100,7 @@ function Bookingscreen({match}) {
                            <hr />
                            <p>Total Days : <b>{totalDays}</b></p>
                            <p>Rent Per Day : <b>{room.rentperday}</b></p>
-                           <h1><b>Total Amount : {totalAmount} /-</b></h1>
+                           <h1><b>Total Amount : ${totalAmount} </b></h1>
 
                            <StripeCheckout
             amount={totalAmount*100}
