@@ -21,14 +21,14 @@ function Adminscreen() {
             <Bookings/>
           </div>
         </TabPane>
-        <TabPane tab="Rooms" key="2">
+        <TabPane tab="Restaurants" key="2">
         
             <div className="row">
                <Rooms/>
             </div>
          
         </TabPane>
-        <TabPane tab="Add Room" key="3">
+        <TabPane tab="Update Restaurant" key="3">
          
             
                  <Addroom/>
@@ -121,16 +121,16 @@ export function Rooms() {
   }, []);
     return (
         <div className='col-md-11'>
-            <h1>Rooms</h1>
+            <h1>Restaurants</h1>
             {loading ? (<Loader/>) : error ? (<Error/>) : (<div>
 
                    <table className='table table-bordered table-dark'>
                        <thead className='bs'>
                            <tr>
-                               <th>Room Id</th>
+                               <th>Restaurant Id</th>
                                <th>Name</th>
                                <th>Type</th>
-                               <th>Rent Per day</th>
+                               <th>Price</th>
                                <th>Max Count</th>
                                <th>Phone Number</th>
                            </tr>
@@ -248,7 +248,7 @@ export function Addroom() {
           <input
             type="text"
             className="form-control mt-1"
-            placeholder="rentperday"
+            placeholder="price"
             value={rentperday}
             onChange={(e) => {
               setrentperday(e.target.value);
@@ -325,7 +325,7 @@ export function Addroom() {
             }}
           />
           <div className='mt-1 text-right'>
-          <button className="btn btn-primary" onClick={addRoom}>ADD ROOM</button>
+          <button className="btn btn-primary" onClick={addRoom}>UPDATE RESTAURANT</button>
           </div>
         </div>
      
