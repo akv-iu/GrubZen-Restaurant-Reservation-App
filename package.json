@@ -18,7 +18,7 @@
     "npm": "7.4.3"
   },
   "scripts": {
-    "build": "cd server 8& pm install && cd ../client && npm install && npm run build",
+    "build": "cd server 8& npm install && cd ../client && npm install && npm run build",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1" 
   },
