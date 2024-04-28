@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.19.2",
     "moment": "^2.29.1",
     "mongoose": "^5.12.12",
     "nodemon": "^2.0.7",
