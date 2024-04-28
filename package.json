@@ -18,12 +18,10 @@
     "npm": "7.4.3"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "node server.js",
-    "build": "npm install --prefer-offline --clean && cd client && npm install --prefer-offline --clean && npm run build"
+    "build": "npm install && cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC"
