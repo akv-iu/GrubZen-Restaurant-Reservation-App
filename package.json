@@ -1,5 +1,5 @@
 {
-  "name": "sheyrooms",
+  "name": "grubzen",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -23,7 +23,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "node server.js",
-    "build": "cd server && npm install  && cd ../client && npm install && npm run build"
+    "build": "npm install --prefer-offline --clean && cd client && npm install --prefer-offline --clean && npm run build"
   },
   "author": "",
   "license": "ISC"
