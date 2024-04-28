@@ -21,7 +21,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm install && cd client && npm install && npm run build",
+    "build": "npm install --prefer-offline --clean && cd client && npm install --prefer-offline --clean && npm run build",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1" 
     
